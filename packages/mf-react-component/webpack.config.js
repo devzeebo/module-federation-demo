@@ -17,8 +17,7 @@ module.exports = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: 'devzeebo-mf-react-component',
-      library: { type: 'var', name: '_mf_react_component' },
+      name: 'mfReactComponent',
       filename: 'remote.js',
       exposes: {
         './RepoChart': './src/components/RepoChart',

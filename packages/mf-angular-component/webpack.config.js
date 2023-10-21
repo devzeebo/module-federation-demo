@@ -1,20 +1,25 @@
 // this webpack config is additive to the angular config.
 const { ModuleFederationPlugin } = require('webpack').container;
 
+/** @type {import('webpack').Configuration} */
 module.exports = {
   module: {
     rules: [
     ],
   },
+  optimization: {
+    splitChunks: false,
+  },
+  output: {
+    publicPath: 'http://localhost:4200/',
+  },
   plugins: [
     new ModuleFederationPlugin({
-      name: 'devzeebo-mf-angular-component',
-      library: { type: 'var', name: '_mf_angular_component' },
+      name: 'mfAngularComponent',
       filename: 'remote.js',
       exposes: {
-        './mfexposed.component': './src/app/mf-exposed/mfexposed.component.ts',
-        './mfexposed.module': './src/app/mf-exposed/mfexposed.module.ts',
-        './app.module': './src/app/app.module.ref.ts',
+        // './mfexposed.component': './src/app/mf-exposed/mfexposed.component.ts',
+        './bootstrapper': './src/bootstrapper.ts',
       },
     }),
   ],

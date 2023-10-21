@@ -11,7 +11,8 @@
             ],
             "@devzeebo/mf-angular-component/*": [
                 "../mf-angular-component/src/app/mf-exposed/*",
-                "../mf-angular-component/src/app/*"
+                "../mf-angular-component/src/app/*",
+                "../mf-angular-component/src/*"
             ]
         }
     },
