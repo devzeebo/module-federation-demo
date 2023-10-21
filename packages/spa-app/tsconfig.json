@@ -8,6 +8,9 @@
         "paths": {
             "@devzeebo/mf-react-component/*": [
                 "../mf-react-component/src/components/*"
+            ],
+            "@devzeebo/mf-angular-component/*": [
+                "../mf-angular-component/src/app/mf-exposed/*"
             ]
         }
     },

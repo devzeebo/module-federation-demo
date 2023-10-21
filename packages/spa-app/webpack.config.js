@@ -27,6 +27,7 @@ module.exports = {
       name: 'spa',
       remotes: {
         '@devzeebo/mf-react-component': 'devzeebo-mf-react-component@http://localhost:3001/remote.js',
+        '@devzeebo/mf-angular-component': 'devzeebo-mf-angular-component@http://localhost:4200/remote.js',
       },
       shared: {
         react: {
