@@ -9,9 +9,13 @@ module.exports = {
   },
   optimization: {
     splitChunks: false,
+    runtimeChunk: false,
   },
   output: {
     publicPath: 'http://localhost:4200/',
+  },
+  experiments: {
+    topLevelAwait: true,
   },
   plugins: [
     new ModuleFederationPlugin({

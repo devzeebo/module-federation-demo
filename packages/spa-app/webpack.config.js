@@ -1,6 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { ModuleFederationPlugin } = require('webpack').container;
 
+/** @type {import('webpack').Configuration} */
 module.exports = {
   entry: './src/bootstrap',
   mode: 'development',
@@ -15,6 +16,9 @@ module.exports = {
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
+  },
+  output: {
+    publicPath: 'http://localhost:3000/',
   },
   plugins: [
     new HtmlWebpackPlugin(),

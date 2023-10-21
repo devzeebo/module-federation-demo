@@ -1,5 +1,6 @@
 const { ModuleFederationPlugin } = require('webpack').container;
 
+/** @type {import('webpack').Configuration} */
 module.exports = {
   entry: './src/bootstrap',
   mode: 'development',
@@ -12,8 +13,18 @@ module.exports = {
       },
     ],
   },
+  optimization: {
+    splitChunks: false,
+    runtimeChunk: false,
+  },
+  experiments: {
+    topLevelAwait: true,
+  },
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
+  },
+  output: {
+    publicPath: 'http://localhost:3001/',
   },
   plugins: [
     new ModuleFederationPlugin({
