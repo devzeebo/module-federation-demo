@@ -1,0 +1,8 @@
+version: '3.9'
+services:
+  react-component:
+    build:
+      context: .
+      dockerfile: ./packages/devzeebo-react-component/Dockerfile
+    ports:
+      - 3001:80
