@@ -1,0 +1,18 @@
+{
+    "extends": "../../tsconfig.json",
+    "compilerOptions": {
+        "noEmit": false,
+        "outDir": "./dist",
+        "jsx": "react",
+        "baseUrl": ".",
+        "paths": {
+            "@devzeebo/mf-react-component/*": [
+                "../mf-react-component/src/components/*"
+            ]
+        }
+    },
+    "include": [
+        "**/*.ts",
+        "**/*.tsx"
+    ]
+}

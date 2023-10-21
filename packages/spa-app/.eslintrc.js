@@ -1,13 +1,9 @@
 /** @type {import('eslint').ESLint.ConfigData} */
 module.exports = {
   extends: [
-    '@react-ddd',
+    '../../.eslintrc.js',
   ],
-  root: true,
   parserOptions: {
     project: './tsconfig.eslint.json',
-  },
-  rules: {
-    'import/no-extraneous-dependencies': 'off',
   },
 };

@@ -22,11 +22,11 @@ module.exports = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: 'remote',
-      library: { type: 'var', name: 'remote' },
+      name: 'devzeebo-mf-react-component',
+      library: { type: 'var', name: '_mf_react_component' },
       filename: 'remote.js',
       exposes: {
-        './RepoChart': './src/components/RepoChart/RepoChart',
+        './RepoChart': './src/components/RepoChart',
       },
       shared: {
         react: {

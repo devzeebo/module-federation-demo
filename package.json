@@ -2,11 +2,14 @@
   "name": "module-federation",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "dev": "nx run-many -t dev -p @devzeebo/mf-spa-app,@devzeebo/mf-react-component"
+  },
   "private": true,
   "devDependencies": {
     "@nx/js": "17.0.1",
     "@react-ddd/eslint-config": "^0.3.1",
+    "@types/lodash": "^4.14.200",
     "nx": "17.0.1",
     "ts-loader": "^9.5.0",
     "typescript": "^5.2.2",
