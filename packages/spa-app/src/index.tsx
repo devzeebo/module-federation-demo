@@ -1,14 +1,9 @@
 import { createRoot } from 'react-dom/client';
 import React from 'react';
 
-const logImport = (e: any) => {
-  console.error(e);
-  return Promise.reject(e);
-};
-
 (async () => {
   const { buildWebComponents } = await import('@devzeebo/mf-angular-component/bootstrapper');
-  // await buildWebComponents();
+  await buildWebComponents();
 
   const { App } = await import('./components/App');
   // const { AngularModuleContext } = await import('@bubblydoo/angular-react');
