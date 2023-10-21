@@ -2,14 +2,20 @@
 const { ModuleFederationPlugin } = require('webpack').container;
 
 module.exports = {
+  module: {
+    rules: [
+    ],
+  },
   plugins: [
     new ModuleFederationPlugin({
-      name: 'mf-angular-component',
-      library: { type: 'var', name: 'mf_angular_component' },
+      name: 'devzeebo-mf-angular-component',
+      library: { type: 'var', name: '_mf_angular_component' },
       filename: 'remote.js',
       exposes: {
-        './MfExposedModule': './src/app/mf-exposed/mfexposed.module.ts'
-      }
-    })
-  ]
-}
+        './mfexposed.component': './src/app/mf-exposed/mfexposed.component.ts',
+        './mfexposed.module': './src/app/mf-exposed/mfexposed.module.ts',
+        './app.module': './src/app/app.module.ref.ts',
+      },
+    }),
+  ],
+};

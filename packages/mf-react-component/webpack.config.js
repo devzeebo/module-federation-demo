@@ -1,8 +1,7 @@
-const path = require('path');
 const { ModuleFederationPlugin } = require('webpack').container;
 
 module.exports = {
-  entry: './src/index.ts',
+  entry: './src/bootstrap',
   mode: 'development',
   module: {
     rules: [
@@ -16,10 +15,6 @@ module.exports = {
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
   },
-  output: {
-    filename: 'remoteEntry.js',
-    path: path.resolve(__dirname, 'dist'),
-  },
   plugins: [
     new ModuleFederationPlugin({
       name: 'devzeebo-mf-react-component',
@@ -31,13 +26,9 @@ module.exports = {
       shared: {
         react: {
           singleton: true,
-          version: '0',
-          requiredVersion: false,
         },
         'react-dom': {
           singleton: true,
-          version: '0',
-          requiredVersion: false,
         },
       },
     }),

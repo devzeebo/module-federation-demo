@@ -19,10 +19,17 @@
     "target": "ES2022",
     "module": "ES2022",
     "useDefineForClassFields": false,
+    "allowSyntheticDefaultImports": true,
+    "jsx": "preserve",
     "lib": [
       "ES2022",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@devzeebo/spa-app/*": [
+        "../spa-app/src/components/*"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

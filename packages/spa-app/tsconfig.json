@@ -10,7 +10,8 @@
                 "../mf-react-component/src/components/*"
             ],
             "@devzeebo/mf-angular-component/*": [
-                "../mf-angular-component/src/app/mf-exposed/*"
+                "../mf-angular-component/src/app/mf-exposed/*",
+                "../mf-angular-component/src/app/*"
             ]
         }
     },

@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { ModuleFederationPlugin } = require('webpack').container;
 
 module.exports = {
-  entry: './src/index.ts',
+  entry: './src/bootstrap.ts',
   mode: 'development',
   module: {
     rules: [
@@ -24,19 +24,22 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin(),
     new ModuleFederationPlugin({
-      name: 'spa',
+      name: 'devzeebo-spa-app',
+      filename: 'remote.js',
+      library: { type: 'var', name: '_spa_app' },
+      exposes: {
+        './App': './src/components/App',
+      },
       remotes: {
-        '@devzeebo/mf-react-component': 'devzeebo-mf-react-component@http://localhost:3001/remote.js',
-        '@devzeebo/mf-angular-component': 'devzeebo-mf-angular-component@http://localhost:4200/remote.js',
+        '@devzeebo/mf-react-component': '_mf_react_component@http://localhost:3001/remote.js',
+        '@devzeebo/mf-angular-component': '_mf_angular_component@http://localhost:4200/remote.js',
       },
       shared: {
         react: {
           singleton: true,
-          eager: true,
         },
         'react-dom': {
           singleton: true,
-          eager: true,
         },
       },
     }),

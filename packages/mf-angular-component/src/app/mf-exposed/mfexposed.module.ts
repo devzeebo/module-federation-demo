@@ -3,6 +3,6 @@ import { MfExposedComponent } from './mfexposed.component';
 
 @NgModule({
   declarations: [MfExposedComponent],
-  exports: [MfExposedComponent]
+  exports: [MfExposedComponent],
 })
 export class MfExposedModule { }

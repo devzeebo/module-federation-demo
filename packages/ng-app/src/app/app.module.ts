@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { AngularReactModule } from '@bubblydoo/angular-react';
 import { AppComponent } from './app.component';
-import { MfExposedModule } from './mf-exposed/mfexposed.module';
 
 @NgModule({
   declarations: [
@@ -10,7 +10,7 @@ import { MfExposedModule } from './mf-exposed/mfexposed.module';
   ],
   imports: [
     BrowserModule,
-    MfExposedModule,
+    AngularReactModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

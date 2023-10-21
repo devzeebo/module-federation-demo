@@ -3,7 +3,18 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "dev": "nx run-many -t dev -p @devzeebo/mf-spa-app,@devzeebo/mf-react-component"
+    "dev:react-host": "wireit",
+    "dev:ng-host": "wireit"
+  },
+  "wireit": {
+    "dev:ng-host": {
+      "command": "nx run-many -t dev -p @devzeebo/mf-ng-app",
+      "service": true
+    },
+    "dev:react-host": {
+      "command": "nx run-many -t dev -p @devzeebo/mf-spa-app,@devzeebo/mf-react-component,@devzeebo/mf-angular-component",
+      "service": true
+    }
   },
   "private": true,
   "devDependencies": {
@@ -15,7 +26,8 @@
     "typescript": "^5.2.2",
     "webpack": "^5.89.0",
     "webpack-cli": "^5.1.4",
-    "webpack-dev-server": "^4.15.1"
+    "webpack-dev-server": "^4.15.1",
+    "wireit": "^0.14.1"
   },
   "workspaces": [
     "packages/*"

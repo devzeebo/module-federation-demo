@@ -9,9 +9,6 @@ const devConfig = {
   devServer: {
     port: 3001,
   },
-  output: {
-    publicPath: 'http://localhost:3001/',
-  },
 };
 
 module.exports = merge(
