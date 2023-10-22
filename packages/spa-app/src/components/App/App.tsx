@@ -15,6 +15,7 @@ const App = () => {
     const { current } = ref as any;
 
     current.addEventListener('increment', onIncrement);
+    current.specialProp = { magical: 'prop' };
     return () => current.removeEventListener('increment', onIncrement);
   });
 
