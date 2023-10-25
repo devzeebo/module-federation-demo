@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input, ViewEncapsulation } from '@angular/core';
+import { Component, ElementRef, Input, NgZone, ViewEncapsulation } from '@angular/core';
 
 @Component({
   standalone: true,
@@ -13,8 +13,17 @@ export class MfExposedComponent {
   @Input()
   specialProp?: { magical: string };
 
-  constructor(private element: ElementRef) {
-    this.element.nativeElement.addEventListener('increment', (e: CustomEvent) => console.log('from angular', e));
+  constructor(private element: ElementRef, zone: NgZone) {
+    // const webComponent = this.element.nativeElement;
+
+    // if (webComponent.specialProp) {
+    //   this.specialProp = webComponent.specialProp;
+    // }
+
+    // Object.defineProperty(webComponent, 'specialProp', {
+    //   get: () => this.specialProp,
+    //   set: (value) => zone.run(() => this.specialProp = value)
+    // });
   }
 
   count = 0;

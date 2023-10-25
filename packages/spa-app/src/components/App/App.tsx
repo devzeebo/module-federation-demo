@@ -1,5 +1,5 @@
 import type { DOMAttributes } from 'react';
-import React, { useLayoutEffect, useRef } from 'react';
+import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 
 import { RepoChart } from '@devzeebo/mf-react-component/RepoChart';
 // import { AngularWrapper } from '@bubblydoo/angular-react';
@@ -9,15 +9,26 @@ import { Grid } from '../Grid';
 const App = () => {
   const ref = useRef<HTMLInputElement>(null);
 
+  const [specialProp, setSpecialProp] = useState({ magical: 'prop' });
+
   useLayoutEffect(() => {
     const onIncrement = (e: CustomEvent) => console.log('from react', e);
 
     const { current } = ref as any;
 
     current.addEventListener('increment', onIncrement);
-    current.specialProp = { magical: 'prop' };
     return () => current.removeEventListener('increment', onIncrement);
   });
+
+  useEffect(() => {
+    setTimeout(() => setSpecialProp({ magical: 'updated prop' }), 3000);
+  }, []);
+
+  useEffect(() => {
+    const { current } = ref as any;
+
+    current.specialProp = specialProp;
+  }, [specialProp]);
 
   return <Grid style={{
     minHeight: '100vh',
